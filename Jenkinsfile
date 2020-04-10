@@ -11,10 +11,13 @@ pipeline{
 				sh "docker-compose up TestRun"
 				}	
 			}
-			stage("Stop Grid"){
-				steps{
+			
+		}
+		post{
+			always{
+				archiveArtifacts artifacts:'output/**'
 				sh "docker-compose down"
-				}	
+			
 			}
 		}
 	
