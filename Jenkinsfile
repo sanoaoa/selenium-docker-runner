@@ -3,17 +3,17 @@ pipeline{
 		stages{
 			stage("Start Grid"){
 				steps{
-					sh "docker-compose up -d hub chrome firefox"
+					sh " sudo docker-compose up -d hub chrome firefox"
 				}
 			}
 			stage("Run Test"){
 				steps{
-				sh "docker-compose up TestRun"
+				sh " sudo docker-compose up TestRun"
 				}	
 			}
 			stage("Stop Grid"){
 				steps{
-				sh "docker-compose down"
+				sh "sudo docker-compose down"
 				}	
 			}
 		}

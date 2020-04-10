@@ -25,5 +25,5 @@ services:
       - BROWSER=chrome
       - HUB_HOST=hub
       - MODULE=testng.xml 
-   # volumes:
-   #   - ./output-result:/usr/search/udemy/test-output
+    volumes:
+      - ./output-result:/usr/search/udemy/test-output
