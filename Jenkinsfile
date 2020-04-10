@@ -7,12 +7,14 @@ pipeline{
 				}
 			}
 			stage("Run Test"){
+				steps{
 				sh "docker-compose up TestRun"
-			
+				}	
 			}
 			stage("Stop Grid"){
+				steps{
 				sh "docker-compose down"
-
+				}	
 			}
 	}
 }
